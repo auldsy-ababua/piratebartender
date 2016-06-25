@@ -26,16 +26,14 @@ $("document").ready(function (){
         alert("Then get out of my cantina, ya bum!");
     });
     $(".choiceYes").click(function () {
-        $(".app").append("<div><h3>What's yer name, pirate?</h3></div>");
-        $(".app").append("<input type='text' class='name' />" + createButton("Tell name", "nameButton"));
         $(".app").append("<div><h3>Alrighty! Now let me ask ya a few questions about what ya like to drink.</h3></div>");
         var questions = new Questions();
         for (question in questions){
             var text = questions[question];
             $(".app").append("<div><h3>" + text + "</h3></div>");
-            $(".app").append("<input id=" + question + " type='checkbox'></input>");
+            $(".app").append("<input id=" + question + " type='checkbox'>Yes, I do!</input>");
         }
-        $(".app").append("<button class='makeDrink'>Make My Drink!</button>");
+        $(".app").append("<br><br><button class='makeDrink'>Make My Drink!</button>");
         $(".makeDrink").click(function () {
             var myDrink = "";
             for (question in questions) {
